@@ -42,6 +42,16 @@ function vars.uri(r)
     return ffi_string(str_t[0].data, str_t[0].len)
 end
 
+function vars.args(r)
+    r = r or get_request()
+    if not r then
+        return nil, "no request found"
+    end
+
+    C.ngx_http_lua_var_ffi_args(r, str_t)
+    return ffi_string(str_t[0].data, str_t[0].len)
+end
+
 
 function vars.host(r)
     r = r or get_request()

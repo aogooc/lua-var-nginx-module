@@ -44,6 +44,15 @@ ngx_http_lua_var_ffi_uri(ngx_http_request_t *r, ngx_str_t *uri)
     return NGX_OK;
 }
 
+ngx_int_t
+ngx_http_lua_var_ffi_args(ngx_http_request_t *r, ngx_str_t *args)
+{
+    args->data = r->args.data;
+    args->len = r->args.len;
+
+    return NGX_OK;
+}
+
 
 ngx_int_t
 ngx_http_lua_var_ffi_host(ngx_http_request_t *r, ngx_str_t *host)
