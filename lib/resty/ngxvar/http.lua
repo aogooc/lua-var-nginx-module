@@ -14,6 +14,7 @@ local str_buf       = get_string_buf(1024)
 
 ffi.cdef([[
 int ngx_http_lua_var_ffi_uri(ngx_http_request_t *r, ngx_str_t *uri);
+int ngx_http_lua_var_ffi_args(ngx_http_request_t *r, ngx_str_t *args);
 int ngx_http_lua_var_ffi_host(ngx_http_request_t *r, ngx_str_t *host);
 int ngx_http_lua_var_ffi_test();
 int ngx_http_lua_var_ffi_remote_addr(ngx_http_request_t *r,
